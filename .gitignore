@@ -1,0 +1,10 @@
+# cmake
+*build*/
+
+# clion
+*.iml
+.idea/*
+!.idea/codeStyles/
+
+# macos
+.DS_Store
