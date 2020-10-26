@@ -9,3 +9,6 @@ cmake-build*/
 
 # macos
 .DS_Store
+
+# visual studio
+out/
