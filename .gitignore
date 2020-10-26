@@ -1,6 +1,7 @@
 # cmake
 build/
 cmake-build*/
+CMakeSettings.json
 
 # clion
 *.iml
@@ -12,3 +13,4 @@ cmake-build*/
 
 # visual studio
 out/
+.vs/
