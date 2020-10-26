@@ -30,11 +30,11 @@ TEST(ConstructibleSingletonTest, ThereCanBeOnlyOne) {
   EXPECT_DEATH({
     constructible_singleton a{42};
     constructible_singleton b{23};
-  }, "^Assertion failed: \\(instance==nullptr\\).*$");
+  }, "Assertion failed:.*instance==nullptr");
 }
 
 TEST(ConstructibleSingletonTest, CrashesIfThereIsNoInstanceYet) {
   EXPECT_DEATH({
       (void)constructible_singleton::get_instance();
-  }, "^Assertion failed: \\(instance!=nullptr\\).*$");
+  }, "Assertion failed:.*instance!=nullptr");
 }
