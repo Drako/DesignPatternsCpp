@@ -1,7 +1,9 @@
 #include "non_constructible.hxx"
 
 non_constructible_singleton::non_constructible_singleton(int answer) noexcept
-    :answer{answer} { }
+    :answer{answer}
+{
+}
 
 non_constructible_singleton& non_constructible_singleton::get_instance() noexcept
 {
