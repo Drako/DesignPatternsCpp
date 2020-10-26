@@ -6,7 +6,7 @@
 #include <cstdint>
 #include <string>
 
-class server_config {
+class server_config final {
   std::string host;
   std::uint16_t port;
 
@@ -16,7 +16,7 @@ class server_config {
 
   server_config(std::string host, std::uint16_t port, bool ssl, std::string certificate, std::string key);
 
-  struct stage2 {
+  struct stage2 final {
     std::string host;
     std::uint16_t port;
     std::string certificate;
@@ -25,7 +25,7 @@ class server_config {
     server_config build()&& noexcept;
   };
 
-  struct stage1 {
+  struct stage1 final {
     std::string host;
     std::uint16_t port;
 
@@ -35,7 +35,7 @@ class server_config {
   };
 
 public:
-  struct builder {
+  struct builder final {
     stage1 server(std::string host, std::uint16_t port)&& noexcept;
   };
 

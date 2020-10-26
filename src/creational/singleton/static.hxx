@@ -3,7 +3,7 @@
 #ifndef SINGLETON_STATIC_HXX
 #define SINGLETON_STATIC_HXX
 
-class static_singleton {
+class static_singleton final {
   static static_singleton instance;
 
   explicit static_singleton(int answer) noexcept;

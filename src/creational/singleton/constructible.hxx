@@ -3,7 +3,7 @@
 #ifndef SINGLETON_CONSTRUCTIBLE_HXX
 #define SINGLETON_CONSTRUCTIBLE_HXX
 
-class constructible_singleton {
+class constructible_singleton final {
   static constructible_singleton* instance;
 
   int answer;

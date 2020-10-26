@@ -3,7 +3,7 @@
 #ifndef SINGLETON_NON_CONSTRUCTIBLE_HXX
 #define SINGLETON_NON_CONSTRUCTIBLE_HXX
 
-class non_constructible_singleton {
+class non_constructible_singleton final {
   int answer;
 
   explicit non_constructible_singleton(int answer) noexcept;
