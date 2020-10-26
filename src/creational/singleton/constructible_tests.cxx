@@ -27,14 +27,14 @@ TEST(ConstructibleSingletonTest, SingletonShouldBeAccessible)
 }
 
 TEST(ConstructibleSingletonTest, ThereCanBeOnlyOne) {
-  ASSERT_DEATH({
+  EXPECT_DEATH({
     constructible_singleton a{42};
     constructible_singleton b{23};
   }, "^Assertion failed: \\(instance==nullptr\\).*$");
 }
 
 TEST(ConstructibleSingletonTest, CrashesIfThereIsNoInstanceYet) {
-  ASSERT_DEATH({
+  EXPECT_DEATH({
       (void)constructible_singleton::get_instance();
   }, "^Assertion failed: \\(instance!=nullptr\\).*$");
 }
