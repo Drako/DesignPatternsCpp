@@ -1,4 +1,5 @@
 add_subdirectory(behavioral)
 add_subdirectory(creational)
+add_subdirectory(exercises)
 add_subdirectory(other)
 add_subdirectory(structural)
