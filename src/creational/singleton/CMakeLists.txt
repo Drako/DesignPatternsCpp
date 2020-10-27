@@ -4,4 +4,4 @@ add_executable(singleton
         static.cxx static.hxx static_tests.cxx
         )
 target_link_libraries(singleton gtest gtest_main)
-add_test(singleton_tests COMMAND singleton)
+add_test(NAME singleton_tests COMMAND singleton)

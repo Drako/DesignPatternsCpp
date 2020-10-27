@@ -9,4 +9,4 @@ target_include_directories(dependency_injection PRIVATE
         ${CMAKE_SOURCE_DIR}/contrib/fruit/include
         ${CMAKE_BINARY_DIR}/contrib/fruit/include
         )
-add_test(dependency_injection_tests COMMAND dependency_injection)
+add_test(NAME dependency_injection_tests COMMAND dependency_injection)

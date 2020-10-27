@@ -7,4 +7,4 @@ add_executable(decorator
         combined_tests.cxx
         )
 target_link_libraries(decorator gtest gtest_main gmock)
-add_test(decorator_tests COMMAND decorator)
+add_test(NAME decorator_tests COMMAND decorator)
