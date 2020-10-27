@@ -6,7 +6,7 @@
 
 TEST(InjectorTest, CanGreetTheWorld)
 {
-  EXPECT_NO_FATAL_FAILURE(({
+  auto const code = [] {
     auto const component = []() -> fruit::Component<writer, greeter> {
       return fruit::createComponent()
           .install(get_writer_component)
@@ -16,7 +16,9 @@ TEST(InjectorTest, CanGreetTheWorld)
     fruit::Injector<writer, greeter> injector{static_cast<fruit::Component<writer, greeter>(*)()>(component)};
     auto g = injector.get<greeter*>();
     g->greet();
-  }));
+  };
+
+  EXPECT_NO_FATAL_FAILURE(code());
 }
 
 TEST(InjectorTest, WorksWithMock)
