@@ -13,4 +13,5 @@ CMakeSettings.json
 
 # visual studio
 out/
-.vs/
+.vs/*
+!.vs/launch.vs.json

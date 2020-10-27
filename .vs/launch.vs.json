@@ -1,0 +1,24 @@
+{
+  "version": "0.2.1",
+  "defaults": {},
+  "configurations": [
+    {
+      "type": "default",
+      "project": "CMakeLists.txt",
+      "projectTarget": "bf.exe (src\\exercises\\bf\\bf.exe)",
+      "name": "bf.exe with hello.bf",
+      "args": [
+        "${workspaceRoot}\\src\\exercises\\bf\\examples\\hello.bf"
+      ]
+    },
+    {
+      "type": "default",
+      "project": "CMakeLists.txt",
+      "projectTarget": "bf.exe (src\\exercises\\bf\\bf.exe)",
+      "name": "bf.exe with 99-bottles.bf",
+      "args": [
+        "${workspaceRoot}\\src\\exercises\\bf\\examples\\99-bottles.bf"
+      ]
+    }
+  ]
+}
