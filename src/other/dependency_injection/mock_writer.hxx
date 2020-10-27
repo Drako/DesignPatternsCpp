@@ -8,7 +8,7 @@
 
 #include "writer.hxx"
 
-class mock_writer: public writer {
+class mock_writer final: public writer {
 public:
   INJECT(mock_writer()) = default;
 

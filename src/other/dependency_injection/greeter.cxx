@@ -1,6 +1,6 @@
 #include "greeter.hxx"
 
-class greeter_impl: public greeter {
+class greeter_impl final: public greeter {
   writer* w;
 
 public:

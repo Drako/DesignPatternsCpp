@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-class stdout_writer: public writer {
+class stdout_writer final: public writer {
 public:
   INJECT(stdout_writer()) = default;
 

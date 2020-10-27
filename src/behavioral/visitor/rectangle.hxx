@@ -5,7 +5,7 @@
 
 #include "shape.hxx"
 
-struct rectangle : shape {
+struct rectangle final: shape {
   int w, h;
 
   rectangle(int w, int h) noexcept;

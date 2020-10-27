@@ -6,7 +6,7 @@
 #include "shape.hxx"
 #include "shape_visitor.hxx"
 
-struct circle : shape {
+struct circle final: shape {
   int r;
 
   explicit circle(int r) noexcept;
