@@ -5,6 +5,7 @@
 #include "rectangle.hxx"
 
 #include <algorithm>
+#include <cmath>
 #include <memory>
 #include <vector>
 
