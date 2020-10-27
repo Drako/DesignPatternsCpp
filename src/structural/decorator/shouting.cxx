@@ -1,5 +1,6 @@
 #include "shouting.hxx"
 
+#include <algorithm>
 #include <cctype>
 
 shouting::shouting(printer& base) noexcept
