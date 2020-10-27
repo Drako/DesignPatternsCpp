@@ -8,6 +8,9 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
+if (APPLE)
+    set(CMAKE_MACOSX_RPATH ON)
+endif ()
 enable_testing()
 
 add_subdirectory(contrib)
