@@ -34,12 +34,15 @@ TEST(IntRangeTest, ShouldBeCompatibleWithAlgorithms)
 TEST(IntRangeTest, ShouldBeCompatibleWithNumerics)
 {
   int_range r{10};
-  auto const sum = std::accumulate(std::cbegin(r), std::cend(r), 0);
+
+  int const sum = std::accumulate(std::cbegin(r), std::cend(r), 0);
   EXPECT_EQ(sum, 1+2+3+4+5+6+7+8+9);
 }
 
 TEST(IntRangeTest, ShouldBeCompatibleWithRangeFor)
 {
+  std::for_each()
+
   int sum = 0;
   for (int n : int_range{1, 11}) {
     sum += n;

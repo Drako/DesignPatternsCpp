@@ -19,7 +19,7 @@ TEST(ServerConfigTest, ServerConfigCannotBeConstructedWithoutBuilder)
 
 TEST(ServerConfigTest, ServerConfigSupportsHttp)
 {
-  auto const cfg = server_config::builder{}
+  server_config const cfg = server_config::builder{}
       .server("localhost", 80)
       .build();
 

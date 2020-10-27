@@ -16,7 +16,11 @@ int main(int argc, char** argv)
     std::exit(2);
   }
 
-  interpreter{}.interpret(std::istreambuf_iterator<char>{source}, std::istreambuf_iterator<char>{});
+  interpreter{}.interpret(
+      std::istreambuf_iterator<char>{source},
+      std::istreambuf_iterator<char>{},
+      std::cout
+  );
 
   return 0;
 }
