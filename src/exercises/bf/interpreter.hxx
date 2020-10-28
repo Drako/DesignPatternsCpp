@@ -6,6 +6,7 @@
 #include "instruction.hxx"
 #include "vm.hxx"
 
+#include <functional>
 #include <map>
 
 struct interpreter {
