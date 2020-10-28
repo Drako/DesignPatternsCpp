@@ -1,2 +1,3 @@
 add_subdirectory(iterators)
+add_subdirectory(iterators_c)
 add_subdirectory(visitor)
