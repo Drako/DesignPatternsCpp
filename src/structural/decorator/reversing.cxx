@@ -1,7 +1,7 @@
 #include "reversing.hxx"
 
 reversing::reversing(printer& base) noexcept
-    :base{base}
+    :decorator<printer>{base}
 {
 }
 

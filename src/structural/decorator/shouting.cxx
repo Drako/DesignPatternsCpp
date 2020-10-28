@@ -4,7 +4,7 @@
 #include <cctype>
 
 shouting::shouting(printer& base) noexcept
-    :base{base}
+    :decorator<printer>{base}
 {
 }
 

@@ -1,5 +1,6 @@
 add_executable(decorator
         printer.hxx mock_printer.hxx
+        decorator.hxx
         stream_printer.cxx stream_printer.hxx stream_printer_tests.cxx
         reversing.cxx reversing.hxx reversing_tests.cxx
         shouting.cxx shouting.hxx shouting_tests.cxx

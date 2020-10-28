@@ -4,11 +4,9 @@
 #define DECORATOR_SHOUTING_HXX
 
 #include "printer.hxx"
+#include "decorator.hxx"
 
-class shouting: public printer {
-  printer& base;
-
-public:
+struct shouting: public decorator<printer> {
   explicit shouting(printer& base) noexcept;
 
   shouting(shouting const&) = delete;

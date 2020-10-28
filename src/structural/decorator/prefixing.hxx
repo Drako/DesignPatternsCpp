@@ -4,9 +4,9 @@
 #define DECORATOR_PREFIXING_HXX
 
 #include "printer.hxx"
+#include "decorator.hxx"
 
-class prefixing: public printer {
-  printer& base;
+class prefixing: public decorator<printer> {
   std::string prefix;
 
 public:

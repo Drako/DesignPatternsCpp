@@ -4,11 +4,9 @@
 #define DECORATOR_REVERSING_HXX
 
 #include "printer.hxx"
+#include "decorator.hxx"
 
-class reversing: public printer {
-  printer& base;
-
-public:
+struct reversing: public decorator<printer> {
   explicit reversing(printer& base) noexcept;
 
   reversing(reversing const&) = delete;
