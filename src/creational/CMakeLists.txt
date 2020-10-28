@@ -1,2 +1,3 @@
 add_subdirectory(builder)
+add_subdirectory(builder_c)
 add_subdirectory(singleton)
