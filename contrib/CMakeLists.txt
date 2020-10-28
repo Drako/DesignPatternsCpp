@@ -1,2 +1,4 @@
 add_subdirectory(googletest)
-add_subdirectory(fruit)
+if (NOT MSVC)
+    add_subdirectory(fruit)
+endif ()
