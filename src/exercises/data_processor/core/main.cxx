@@ -2,12 +2,14 @@
 
 #include "api/data_source.hxx"
 #include "api/data_processor.hxx"
+#include "console.hxx"
 
 #include <iostream>
 
 int main()
 {
   ddic::container c;
+  c.register_type<console>().as<output_device>();
   c.load_types("dummy_source_plugin");
   c.load_types("list_buffer_plugin");
   c.load_types("noop_converter_plugin");

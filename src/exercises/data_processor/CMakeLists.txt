@@ -26,6 +26,8 @@ add_executable(data_processor
         core/api/data_processor.hxx
         core/api/data_converter.hxx
         core/api/data_storage.hxx
+        core/api/output_device.hxx
+        core/console.cxx core/console.hxx
         )
 target_include_directories(data_processor PRIVATE ${ddic_HEADER_PATH})
 target_link_libraries(data_processor PRIVATE ddic::lib)

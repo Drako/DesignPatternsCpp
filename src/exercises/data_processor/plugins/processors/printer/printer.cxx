@@ -3,9 +3,10 @@
 #include <data_processor.hxx>
 #include <data_storage.hxx>
 #include <data_converter.hxx>
+#include <output_device.hxx>
 
-#include <iostream>
 #include <iomanip>
+#include <sstream>
 #include <thread>
 
 using namespace std::literals::chrono_literals;
@@ -13,6 +14,7 @@ using namespace std::literals::chrono_literals;
 class printer: public data_processor {
   std::shared_ptr<data_storage> storage;
   std::shared_ptr<data_converter> converter;
+  std::shared_ptr<output_device> out;
 
   bool running = false;
   std::thread worker{};
@@ -20,9 +22,10 @@ class printer: public data_processor {
 public:
   explicit printer(
       std::shared_ptr<data_storage> storage,
-      std::shared_ptr<data_converter> converter
+      std::shared_ptr<data_converter> converter,
+      std::shared_ptr<output_device> out
   )
-      :storage{std::move(storage)}, converter{std::move(converter)}
+      :storage{std::move(storage)}, converter{std::move(converter)}, out{std::move(out)}
   {
   }
 
@@ -42,15 +45,15 @@ public:
         auto pkg = storage->read_package();
         converter->convert(pkg);
 
-        std::cout
-            << "Package #" << std::dec << ++counter << ": "
-            << std::hex << std::setw(2) << std::setfill('0') << static_cast<int>(pkg[0])
-            << std::hex << std::setw(2) << std::setfill('0') << static_cast<int>(pkg[1])
-            << std::hex << std::setw(2) << std::setfill('0') << static_cast<int>(pkg[2])
-            << std::hex << std::setw(2) << std::setfill('0') << static_cast<int>(pkg[3])
-            << std::hex << std::setw(2) << std::setfill('0') << static_cast<int>(pkg[4])
-            << std::hex << std::setw(2) << std::setfill('0') << static_cast<int>(pkg[5])
-            << std::endl;
+        std::ostringstream formatter;
+        formatter << "Thread #" << std::this_thread::get_id() << ": ";
+        formatter << "[processor] Received package #" << std::dec << ++counter << " -> ";
+        formatter << std::hex;
+        for (std::size_t n = 0u; n < 8u; ++n) {
+          formatter << std::setw(2) << std::setfill('0') << static_cast<int>(pkg[n]);
+        }
+
+        out->print_line(formatter.str());
       }
     }};
     return true;
@@ -73,7 +76,7 @@ DDIC_REGISTER_TYPES(c)
   c->register_type<
           printer,
           ddic::creation_policy::always_same
-      >(ddic::inject<data_storage, data_converter>{})
+      >(ddic::inject<data_storage, data_converter, output_device>{})
       .as<data_processor>();
 
   return true;
