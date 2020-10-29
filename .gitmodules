@@ -4,3 +4,6 @@
 [submodule "contrib/fruit"]
 	path = contrib/fruit
 	url = https://github.com/google/fruit.git
+[submodule "contrib/ddic"]
+	path = contrib/ddic
+	url = https://github.com/Drako/ddic.git
