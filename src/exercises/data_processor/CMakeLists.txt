@@ -15,9 +15,9 @@ add_library(dummy_source_plugin MODULE plugins/sources/dummy_source/dummy_source
 target_include_directories(dummy_source_plugin PRIVATE core/api ${ddic_HEADER_PATH})
 target_link_libraries(dummy_source_plugin PRIVATE ddic::lib)
 
-add_library(ring_buffer_plugin MODULE plugins/storage/ring_buffer/ring_buffer.cxx)
-target_include_directories(ring_buffer_plugin PRIVATE core/api ${ddic_HEADER_PATH})
-target_link_libraries(ring_buffer_plugin PRIVATE ddic::lib)
+add_library(list_buffer_plugin MODULE plugins/storage/list_buffer/list_buffer.cxx)
+target_include_directories(list_buffer_plugin PRIVATE core/api ${ddic_HEADER_PATH})
+target_link_libraries(list_buffer_plugin PRIVATE ddic::lib)
 
 add_executable(data_processor
         core/main.cxx
@@ -29,4 +29,4 @@ add_executable(data_processor
         )
 target_include_directories(data_processor PRIVATE ${ddic_HEADER_PATH})
 target_link_libraries(data_processor PRIVATE ddic::lib)
-add_dependencies(data_processor noop_converter_plugin printer_plugin dummy_source_plugin ring_buffer_plugin)
+add_dependencies(data_processor noop_converter_plugin printer_plugin dummy_source_plugin list_buffer_plugin)

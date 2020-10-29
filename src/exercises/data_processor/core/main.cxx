@@ -9,7 +9,7 @@ int main()
 {
   ddic::container c;
   c.load_types("dummy_source_plugin");
-  c.load_types("ring_buffer_plugin");
+  c.load_types("list_buffer_plugin");
   c.load_types("noop_converter_plugin");
   c.load_types("printer_plugin");
 
