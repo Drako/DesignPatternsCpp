@@ -3,12 +3,17 @@
 #include <stdio.h>
 #include <string.h>
 
+char const* bool_to_string(bool value)
+{
+  return &"false\0true"[value*6];
+}
+
 void print_config(server_config_t const* config)
 {
   printf("host: \"%s\", port: %d, ssl: %s, certificate: \"%s\", key: \"%s\"\n",
       config->host,
       config->port,
-      &"false\0true"[config->ssl*6],
+      bool_to_string(config->ssl),
       config->certificate,
       config->key
   );

@@ -41,8 +41,6 @@ TEST(IntRangeTest, ShouldBeCompatibleWithNumerics)
 
 TEST(IntRangeTest, ShouldBeCompatibleWithRangeFor)
 {
-  std::for_each()
-
   int sum = 0;
   for (int n : int_range{1, 11}) {
     sum += n;
